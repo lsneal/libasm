@@ -1,0 +1,68 @@
+Registres :
+Les registres généraux : rax, rbx, rcx, rdx, rsi, rdi, rsp, rbp.
+Les registres d'index : rsi, rdi, rsi, rdi.
+Les registres de base : rbx, rbp.
+Les registres de compteur : rcx.
+Les registres de données : rdx, rax.
+Instructions fondamentales :
+Mouvements de données : mov, push, pop.
+Opérations arithmétiques : add, sub, mul, div, inc, dec.
+Opérations logiques : and, or, xor, not, shl, shr.
+Comparaisons : cmp, test.
+Sauts conditionnels : je, jne, jmp, jz, jnz, etc.
+Instructions pour les boucles : loop, jmp conditionnel.
+Appels de fonctions :
+Passage d'arguments : généralement rdi, rsi, rdx, rcx, r8, r9.
+Appels de fonctions : call.
+Retours de fonctions : ret.
+Accès à la mémoire :
+Chargement / stockage : mov [adresse], valeur, mov registre, [adresse].
+Calcul d'adresse : lea, offset.
+Gestion de la pile :
+Push / Pop : push, pop.
+Ajustement de la pile : push rbp, mov rbp, rsp.
+Appels système :
+Appels de base : syscall.
+Arguments : rdi, rsi, rdx, r10, r8, r9.
+
+
+Registres généraux :
+rax : Accumulateur, utilisé pour stocker les résultats de calculs arithmétiques, les valeurs de retour de fonctions, etc.
+rbx : Registre de base, utilisé comme pointeur de base pour l'accès à la mémoire dans certaines instructions.
+rcx : Registre de compteur, souvent utilisé comme compteur dans les boucles.
+rdx : Registre de données, utilisé pour stocker des données temporaires lors d'opérations arithmétiques ou de division.
+rsi : Registre source index, utilisé pour stocker l'adresse source dans les opérations de transfert de données.
+rdi : Registre destination index, utilisé pour stocker l'adresse de destination dans les opérations de transfert de données.
+rsp : Pointeur de pile, pointe vers le sommet de la pile.
+rbp : Pointeur de base de la pile, utilisé pour accéder aux variables locales et aux paramètres de fonction sur la pile.
+Registres d'index :
+rsi, rdi : Utilisés pour les opérations de chaînes (par exemple, copier une chaîne).
+Registres de contrôle :
+rcx : Utilisé pour contrôler le comportement dans certaines instructions, comme le nombre de répétitions dans les instructions de boucle.
+Registres de debug :
+dr0, dr1, dr2, dr3 : Utilisés pour placer des points d'arrêt lors du débogage.
+Registres d'état :
+rflags : Contient divers drapeaux de statut (comme le drapeau de retenue, le drapeau zéro, etc.) qui sont modifiés par certaines instructions (comme les opérations arithmétiques ou logiques) et peuvent être testés par d'autres instructions conditionnelles.
+Registres d'instructions :
+rip : Pointeur d'instruction, pointe vers l'instruction suivante à exécuter.
+Utilisation des autres mots clés :
+section : Définit une section dans le fichier de code assembleur (.text pour le code, .data pour les données initialisées, .bss pour les données non initialisées).
+global : Déclare une étiquette comme visible depuis d'autres fichiers objets ou programmes.
+extern : Déclare une étiquette comme étant définie dans un autre fichier objet ou programme.
+dd, dq, db : Directive pour déclarer des données de taille spécifique (double mot, quad mot, octet).
+times : Répète une instruction ou une série d'instructions un certain nombre de fois.
+
+
+
+Registres 64 bits (rax, rbx, rcx, rdx, rsi, rdi, rsp, rbp) :
+Utilisés pour les opérations arithmétiques, le stockage de pointeurs, les adresses mémoire, les valeurs de retour de fonction, etc.
+Sont souvent utilisés par défaut pour manipuler des données générales.
+Registres 32 bits (eax, ebx, ecx, edx, esi, edi, esp, ebp) :
+Souvent utilisés pour les opérations arithmétiques sur des entiers 32 bits et pour stocker des données ne nécessitant pas une taille de mot complète.
+Peuvent être utilisés pour l'accès à des parties spécifiques d'un registre 64 bits (par exemple, les 32 bits de poids faible de rax sont accessibles via eax).
+Registres 16 bits (ax, bx, cx, dx, si, di, sp, bp) :
+Utilisés pour les opérations arithmétiques sur des entiers 16 bits.
+Souvent utilisés pour manipuler des données dans des tableaux ou des structures de taille fixe.
+Registres 8 bits (al, ah, bl, bh, cl, ch, dl, dh) :
+Utilisés pour les opérations arithmétiques sur des entiers 8 bits et pour manipuler des données individuelles (par exemple, octets).
+Peuvent être utilisés pour accéder à des parties spécifiques d'un registre de taille supérieure (par exemple, al pour les 8 bits de poids faible de rax).
